@@ -1,0 +1,25 @@
+<package format="3">
+  <name>ign_simulation</name>
+  <version>0.0.1</version>
+  <description>Ignition simulation pkg</description>
+  <license>Apache 2.0</license>
+  <maintainer email="e.aguado@upm.es">Esther Aguado</maintainer>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+   <!-- Citadel -->
+
+  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-gazebo3</exec_depend>
+  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-msgs5</exec_depend>
+  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-transport8</exec_depend>
+
+  <exec_depend>ros_ign_gazebo</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros_ign_bridge</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <depend>urdf</depend>
+  
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

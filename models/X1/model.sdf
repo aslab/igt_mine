@@ -1,0 +1,422 @@
+<?xml version='1.0'?>
+<sdf version="1.6">
+  <model name="x1">
+    <enable_wind>1</enable_wind>
+    <static>0</static>
+    <link name="base">
+      <inertial>
+        <pose frame="">-0.00065 -0.085 0.062 0 0 0</pose>
+        <mass>46.034</mass>
+        <inertia>
+          <ixx>0.613201</ixx>
+          <ixy>-0.0236401</ixy>
+          <ixz>-0.1197</ixz>
+          <iyy>1.7496</iyy>
+          <iyz>-0.00154411</iyz>
+          <izz>2.0406</izz>
+        </inertia>
+      </inertial>
+      <collision name="base_collision">
+        <pose frame="">0 0 0.061875 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9874 0.5709 0.12375</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_collision_1">
+        <pose frame="">0 0 0.185625 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.78992 0.5709 0.12375</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="top_plate_collision">
+        <pose frame="">0.0812 0 0.245 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/top_plate.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="top_plate_collision_2">
+        <pose frame="">0.0812 0 0.245 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.32 0.41 0.09</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="base_visual">
+        <pose frame="">0 0 0 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/chassis.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="center_left_headlight_visual">
+        <pose frame="">0.485766 0.0844 0.124431 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/headlight.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="center_right_headlight_visual">
+        <pose frame="">0.485766 -0.0844 0.124431 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/headlight.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="left_headlight_visual">
+        <pose frame="">0.461459 0.216803 0.124431 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/headlight.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="marker_visual_1">
+        <pose frame="">0.066047 0.212211 0.209188 -3.14159 1.57079 -1.60259</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/led.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="marker_visual_2">
+        <pose frame="">-0.066047 0.212211 0.209188 -3.14159 1.57079 -1.60259</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/led.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="marker_visual_3">
+        <pose frame="">-0.42493 0 0.209188 3.14159 1.57079 7e-06</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/led.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="marker_visual_4">
+        <pose frame="">-0.42493 0.13619 0.209188 3.14159 1.57079 7e-06</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/led.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="marker_visual_5">
+        <pose frame="">-0.42493 -0.13619 0.209188 3.14159 1.57079 7e-06</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/led.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="right_headlight_visual">
+        <pose frame="">0.461459 -0.216803 0.124431 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/headlight.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="marker_visual_6">
+        <pose frame="">0.066047 -0.212211 0.209188 3.14159 1.57079 1.60259</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/led.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="marker_visual_7">
+        <pose frame="">-0.066047 -0.212211 0.209188 3.14159 1.57079 1.60259</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/led.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="top_plate_visual">
+        <pose frame="">0.0812 0 0.245 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/top_plate.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <light name="left_light_source" type="spot">
+        <pose frame="">0.514147 0.216803 0.180 3.14159 1.56859 0</pose>
+        <attenuation>
+          <range>50</range>
+          <linear>0</linear>
+          <constant>0.1</constant>
+          <quadratic>0.0025</quadratic>
+        </attenuation>
+        <diffuse>0.8 0.8 0.5 1</diffuse>
+        <specular>0.8 0.8 0.5 1</specular>
+        <spot>
+          <inner_angle>1</inner_angle>
+          <outer_angle>1.1</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+        <direction>0 0 -1</direction>
+        <cast_shadows>1</cast_shadows>
+      </light>
+      <light name="center_left_light" type="spot">
+        <pose frame="">0.538 0.0844 0.180 3.14159 1.56859 0</pose>
+        <attenuation>
+          <range>50</range>
+          <linear>0</linear>
+          <constant>0.1</constant>
+          <quadratic>0.0025</quadratic>
+        </attenuation>
+        <diffuse>0.8 0.8 0.5 1</diffuse>
+        <specular>0.8 0.8 0.5 1</specular>
+        <spot>
+          <inner_angle>1</inner_angle>
+          <outer_angle>1.1</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+        <direction>0 0 -1</direction>
+        <cast_shadows>1</cast_shadows>
+      </light>
+      <light name="center_right_light" type="spot">
+        <pose frame="">0.538 -0.0844 0.180 3.14159 1.56859 0</pose>
+        <attenuation>
+          <range>50</range>
+          <linear>0</linear>
+          <constant>0.1</constant>
+          <quadratic>0.0025</quadratic>
+        </attenuation>
+        <diffuse>0.8 0.8 0.5 1</diffuse>
+        <specular>0.8 0.8 0.5 1</specular>
+        <spot>
+          <inner_angle>1</inner_angle>
+          <outer_angle>1.1</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+        <direction>0 0 -1</direction>
+        <cast_shadows>1</cast_shadows>
+      </light>
+      <light name="right_light_source" type="spot">
+        <pose frame="">0.514147 -0.216803 0.180 3.14159 1.56859 0</pose>
+        <attenuation>
+          <range>50</range>
+          <linear>0</linear>
+          <constant>0.1</constant>
+          <quadratic>0.0025</quadratic>
+        </attenuation>
+        <diffuse>0.8 0.8 0.5 1</diffuse>
+        <specular>0.8 0.8 0.5 1</specular>
+        <spot>
+          <inner_angle>1</inner_angle>
+          <outer_angle>1.1</outer_angle>
+          <falloff>1</falloff>
+        </spot>
+        <direction>0 0 -1</direction>
+        <cast_shadows>1</cast_shadows>
+      </light>
+    </link>
+    <link name="front_left_wheel">
+      <pose frame="">0.256 0.2854 0.03282 0 0 0</pose>
+      <inertial>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose frame="">0 0 0 -1.57079 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="front_left_wheel_joint" type="revolute">
+      <parent>base</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>+1.79769e+308</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name="front_right_wheel">
+      <pose frame="">0.256 -0.2854 0.03282 0 0 0</pose>
+      <inertial>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose frame="">0 0 0 -1.57079 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="front_right_wheel_joint" type="revolute">
+      <child>front_right_wheel</child>
+      <parent>base</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>+1.79769e+308</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name="rear_left_wheel">
+      <pose frame="">-0.256 0.2854 0.03282 0 0 0</pose>
+      <inertial>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose frame="">0 0 0 -1.57079 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rear_left_wheel_joint" type="revolute">
+      <parent>base</parent>
+      <child>rear_left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>+1.79769e+308</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name="rear_right_wheel">
+      <pose frame="">-0.256 -0.2854 0.03282 0 0 0</pose>
+      <inertial>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose frame="">0 0 0 -1.57079 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://X1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rear_right_wheel_joint" type="revolute">
+      <child>rear_right_wheel</child>
+      <parent>base</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>+1.79769e+308</upper>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
