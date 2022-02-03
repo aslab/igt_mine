@@ -1,4 +1,4 @@
-# install
+# Install
 
 ```
 pip install xacro
@@ -7,7 +7,7 @@ echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 
 mkdir -p robot_ws/src
 cd robot_ws/src
-git clone <URL>
+git clone git@github.com:aslab/ign_simulation.git
 cd ..
 rosdep update
 rosdep install -y -r -q --from-paths src --ignore-src --rosdistro foxy 
