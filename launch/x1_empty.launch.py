@@ -2,19 +2,22 @@ import os
 import xacro
 from ament_index_python.packages import get_package_share_directory
 
-from launch import LaunchDescription
+import launch
 from launch.actions import DeclareLaunchArgument
 from launch.actions import IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, Command
 
 from launch_ros.actions import Node
 
 
 def generate_launch_description():
     pkg_ros_ign_gazebo = get_package_share_directory('ros_ign_gazebo')
-    pkg = get_package_share_directory('ign_simulation')
+    pkg = get_package_share_directory('x1_simulation')
+    urdf_path = pkg + '/models/x1/urdf/x1_from_sdf.urdf'
+    use_sim_time = LaunchConfiguration('use_sim_time')
+    rviz_config_file = os.path.join(pkg, 'rviz', 'urdf_config.rviz')
     
     ign_gazebo = IncludeLaunchDescription(
       PythonLaunchDescriptionSource(
@@ -24,9 +27,14 @@ def generate_launch_description():
 
     spawn = Node(package='ros_ign_gazebo', executable='create',
                 arguments=[
-                    '-name', 'x1_ugv',
-                    '-file',  os.path.join(pkg, 'models', 'x1', 'model.sdf')
-                    ],
+                    '-name', 'X1',
+                    '-file',  os.path.join(pkg, 'models', 'x1', 'model.sdf'),
+                    '-x', '-16.857300',
+                    '-y', '-13.665100',
+                    '-z', '-0.183275',
+                    '-R', '0.114033',
+                    '-P', '0.0275442',
+                    '-Y', '-0.904919',],
                 output='screen',
                 )
     
@@ -45,9 +53,10 @@ def generate_launch_description():
       '/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU',
       '/lidar@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan',
 
-      '/model/x1_ugv/odometry@nav_msgs/msg/Odometry[ignition.msgs.Odometry',
-      '/model/x1_ugv/pose@geometry_msgs/msg/Pose[ignition.msgs.Pose',
-      '/model/x1_ugv/tf@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V',
+      '/model/X1/odometry@nav_msgs/msg/Odometry[ignition.msgs.Odometry',
+      '/model/X1/pose@geometry_msgs/msg/Pose[ignition.msgs.Pose',
+      '/model/X1/tf@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V',
+      '/world/empty/model/X1/joint_state@sensor_msgs/msg/JointState[ignition.msgs.Model',
 
       '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
       '/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist',          
@@ -71,15 +80,40 @@ def generate_launch_description():
                 ],
       remappings=[
             ('/imu', 'imu'),
+            ('/cmd_vel', 'cmd_vel'),
+            ('/world/empty/model/X1/joint_state', 'joint_states'),
+            ('/model/X1/tf', 'tf'),
+            ('/model/X1/odometry', 'odom'),
         ],
         output='screen')
+
+
+    state_publisher = Node(package='robot_state_publisher', executable='robot_state_publisher',
+				output='screen',
+				parameters = [
+					{'ignore_timestamp': False},
+                                        {'use_sim_time': use_sim_time},
+					{'use_tf_static': True},
+					{'robot_description': open(urdf_path).read()}],
+				arguments = [urdf_path])	
+
+    rviz2 = Node(package='rviz2', executable='rviz2',
+					name='rviz2',
+					arguments=['-d', rviz_config_file],
+					parameters=[{'use_sim_time': True}],
+					output='screen',)
+
    
-    return LaunchDescription([
+    return launch.LaunchDescription([
       DeclareLaunchArgument(
           'ign_args',
-          default_value=[os.path.join(pkg, 'worlds', 'empty.sdf')]),
+          default_value=[os.path.join(pkg, 'worlds', 'cave_world.sdf')]),
+      DeclareLaunchArgument('use_sim_time', default_value=['true'],
+                    description='Enable sim time from /clock'),
         ign_gazebo,
         spawn,
         bridge,
+        state_publisher,
+        rviz2,
     ])
 

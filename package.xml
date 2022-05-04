@@ -1,7 +1,7 @@
 <package format="3">
-  <name>ign_simulation</name>
+  <name>x1_simulation</name>
   <version>0.0.1</version>
-  <description>Ignition simulation pkg</description>
+  <description>X1 ignition simulation pkg</description>
   <license>Apache 2.0</license>
   <maintainer email="e.aguado@upm.es">Esther Aguado</maintainer>
 

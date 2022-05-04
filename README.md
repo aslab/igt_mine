@@ -24,11 +24,11 @@ source ~/robot_ws/install/setup.bash
 
 Launch the simulation:
 ```
-ros2 launch ign_simulation x1_empty.launch.py
+ros2 launch x1_simulation x1_empty.launch.py
 ```
 or:
 ```
-ros2 launch ign_simulation x1_empty.launch.py  ign_args:="cave_world.sdf" 
+ros2 launch x1_simulation x1_empty.launch.py  ign_args:="cave_world.sdf" 
 ```
 
 
