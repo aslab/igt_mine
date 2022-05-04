@@ -7,7 +7,7 @@ echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 
 mkdir -p robot_ws/src
 cd robot_ws/src
-git clone git@github.com:aslab/ign_simulation.git
+git clone git@github.com:aslab/x1_simulation.git
 cd ..
 rosdep update
 rosdep install -y -r -q --from-paths src --ignore-src --rosdistro foxy 
@@ -39,9 +39,9 @@ ign topic -l
 ```
 Echo ROS and ignition topics:
 ```
-ros2 topic echo /model/x1_ugv/odometry  
+ros2 topic echo /model/X1/odometry  
 
-ign topic -e -t /model/x1_ugv/odometry
+ign topic -e -t /model/X1/odometry
 ```
 
 Send ROS topics or ignition topics:
