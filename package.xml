@@ -1,25 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>x1_simulation</name>
-  <version>0.0.1</version>
-  <description>X1 ignition simulation pkg</description>
-  <license>Apache 2.0</license>
+  <name>igt_mine</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
   <maintainer email="e.aguado@upm.es">Esther Aguado</maintainer>
+  <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-   <!-- Citadel -->
+  <depend>ros_ign_gazebo</depend>
 
-  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-gazebo3</exec_depend>
-  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-msgs5</exec_depend>
-  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-transport8</exec_depend>
-  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-sensors3</exec_depend>
-
-  <exec_depend>ros_ign_gazebo</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>ros_ign_bridge</exec_depend>
-  <exec_depend>rviz2</exec_depend>
-  <depend>urdf</depend>
-  
+  <exec_depend>ros2launch</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>
