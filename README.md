@@ -28,14 +28,14 @@ Launch the simulation:
 ```
 
 
-List ROS and ignition topics, not all ignition topics are mapped, only used ones:
+List ROS and ignition topics, most ignition topics are mapped:
 ```
 ros2 topic list
 ign topic -l
 ```
 Echo ROS and ignition topics:
 ```
-ros2 topic echo /model/igt_one/odometry  
+ros2 topic echo /odom 
 
 ign topic -e -t /model/igt_one/odometry
 ```
