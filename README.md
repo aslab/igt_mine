@@ -7,7 +7,7 @@ echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 
 mkdir -p robot_ws/src
 cd robot_ws/src
-git clone git@github.com:aslab/x1_simulation.git
+git clone git@github.com:aslab/igt_mine.git
 cd ..
 rosdep update
 rosdep install -y -r -q --from-paths src --ignore-src --rosdistro foxy 
@@ -15,7 +15,7 @@ colcon build --symlink-install
 ```
 
 # Simulation
-Simulation of X1 UGV robot
+Simulation
 
 Source workspace:
 ```
@@ -24,11 +24,7 @@ source ~/robot_ws/install/setup.bash
 
 Launch the simulation:
 ```
-ros2 launch x1_simulation x1_empty.launch.py
-```
-or:
-```
-ros2 launch x1_simulation x1_empty.launch.py  ign_args:="cave_world.sdf" 
+ ros2 launch igt_mine igt_ignition.launch.py 
 ```
 
 
@@ -39,9 +35,9 @@ ign topic -l
 ```
 Echo ROS and ignition topics:
 ```
-ros2 topic echo /model/X1/odometry  
+ros2 topic echo /model/igt_one/odometry  
 
-ign topic -e -t /model/X1/odometry
+ign topic -e -t /model/igt_one/odometry
 ```
 
 Send ROS topics or ignition topics:
