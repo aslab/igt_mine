@@ -108,7 +108,7 @@
     <model name="cave">
       <include>
         <pose>13.2 23.42 -0.3 0 0 0</pose>
-        <uri>model://cave</uri>
+        <uri>model://edgar_cave</uri>
         <name>cave</name>
       </include>
     </model>

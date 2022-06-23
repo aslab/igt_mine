@@ -191,8 +191,8 @@ def generate_launch_description():
 		color_camera_bridge,
 		depth_camera_bridge,
 		odom_base_tf_bridge,
-		pcl2laser_cmd,
-		camera_stf
-	# lidar_bridge,
-        # lidar_stf
+		# pcl2laser_cmd,
+		# camera_stf
+	lidar_bridge,
+        lidar_stf
 	])

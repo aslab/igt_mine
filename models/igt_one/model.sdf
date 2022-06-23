@@ -128,12 +128,13 @@
 						<uri>model://igt_one/meshes/base_link.stl</uri>
 					</mesh>
 				</geometry>
-			<material>
-					<ambient>0.1 0.1 0.1 1.0</ambient>
-					<diffuse>0.1 0.1 0.1 1.0</diffuse>
-					<specular>0.01 0.01 0.01 1.0</specular>
-					  <emissive>1 0 0 1</emissive>
-				</material>
+
+				<material>
+	         <diffuse>0 0 0 0.8</diffuse>
+          <ambient>0 0 0 0.8</ambient>
+          <specular>0 0 0 0.8</specular>
+          <emissive>0 0 0 0.8</emissive>
+	  		</material>
 			</visual>
 			<visual name="base_link_fixed_joint_lump__lidar_visual_1">
 				<pose>0 0 0 0 -0 0</pose>
@@ -152,11 +153,12 @@
 						<uri>model://igt_one/meshes/caster_front.stl</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<ambient>0.4 0.4 0.4 1.0</ambient>
-					<diffuse>0.4 0.4 0.4 1.0</diffuse>
-					<specular>0.01 0.01 0.01 1.0</specular>
-				</material>
+			<material>
+	         <diffuse>0 0 0 0.8</diffuse>
+          <ambient>0 0 0 0.8</ambient>
+          <specular>0 0 0 0.8</specular>
+          <emissive>0 0 0 0.8</emissive>
+	  		</material>
 			</visual>
 			<visual name="base_link_fixed_joint_lump__caster_back_visual_3">
 				<pose>0 0 0 0 -0 0</pose>
@@ -166,11 +168,12 @@
 						<uri>model://igt_one/meshes/caster_back.stl</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<ambient>0.4 0.4 0.4 1.0</ambient>
-					<diffuse>0.4 0.4 0.4 1.0</diffuse>
-					<specular>0.01 0.01 0.01 1.0</specular>
-				</material>
+			<material>
+	         <diffuse>0 0 0 0.8</diffuse>
+          <ambient>0 0 0 0.8</ambient>
+          <specular>0 0 0 0.8</specular>
+          <emissive>0 0 0 0.8</emissive>
+	  		</material>
 			</visual>
 			<visual name="base_link_fixed_joint_lump__d435_link_visual_4">
 				<pose>0.0149 -0.0175 0 1.5708 -0 1.5708</pose>
@@ -381,11 +384,12 @@
 						<uri>model://igt_one/meshes/left_wheel.stl</uri>
 					</mesh>
 				</geometry>
-				<material>
-					<ambient>0.4 0.4 0.4 1.0</ambient>
-					<diffuse>0.4 0.4 0.4 1.0</diffuse>
-					<specular>0.01 0.01 0.01 1.0</specular>
-				</material>
+			<material>
+	         <diffuse>0 0 0 0.8</diffuse>
+          <ambient>0 0 0 0.8</ambient>
+          <specular>0 0 0 0.8</specular>
+          <emissive>0 0 0 0.8</emissive>
+	  		</material>
 			</visual>
 			<velocity_decay/>
 			<gravity>1</gravity>
@@ -451,9 +455,10 @@
 					</mesh>
 				</geometry>
 				<material>
-					<ambient>0.4 0.4 0.4 1.0</ambient>
-					<diffuse>0.4 0.4 0.4 1.0</diffuse>
-					<specular>0.01 0.01 0.01 1.0</specular>
+         <diffuse>0 0 0 0.8</diffuse>
+          <ambient>0 0 0 0.8</ambient>
+          <specular>0 0 0 0.8</specular>
+          <emissive>0 0 0 0.8</emissive>
 				</material>
 			</visual>
 			<velocity_decay/>
